@@ -37,16 +37,56 @@ public class higherorder
 
 //part 2: Multiple inheritance
 
+
 class multiInherit
 {
+    /*
+    public interface Ia
+    {
+        void f();
+        void g();
+        void h1();
+    }
+
+    public interface Ib
+    {
+        void f();
+        void g();
+        void h2();
+    }
+
+
+    public class A : Ia
+    {
+        public virtual void f() { Console.WriteLine("f from class A"); }
+        public virtual void g() { Console.WriteLine("g from class A"); }
+        public virtual void h1() { Console.WriteLine("h1 from class A"); }
+    }
+
+    public class B : Ib
+    {
+        public virtual void f() { Console.WriteLine("f from class B"); }
+        public virtual void g() { Console.WriteLine("g from class B"); }
+        public virtual void h2() { Console.WriteLine("h2 from class B"); }
+    }
+    */
+
     class C : A, Ib
     {
         //h1 from a 
         //h2 from b 
         //f from a 
-        //g from b 
-        public void h2();
-        public void  g();
+        //g from 
+        private B n = new B();
+        public override void g()
+        {
+            n.g();
+        }
+
+        public void h2()
+        {
+            n.h2();
+        }
     }
     
 
